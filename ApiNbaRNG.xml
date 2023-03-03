@@ -1,0 +1,30 @@
+<element name="nbateams" xmlns="http://relaxng.org/ns/structure/1.0"
+	datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+    <zeroOrMore>
+        <element name="team">
+            <attribute name="id">
+                <data type="integer">
+                    <param name="minInclusive">1</param>
+                </data>
+            </attribute>
+            <element name="name">
+                <text />
+            </element>
+            <element name="nickname">
+                <text />
+            </element>
+            <element name="code">
+                <text />
+            </element>
+            <element name="city">
+                <text />
+            </element>
+            <element name="logo">
+                <text />
+            </element>
+            <element name="nbaFranchise">
+                <data type="boolean" />
+            </element>
+        </element>
+    </zeroOrMore>
+</element>
