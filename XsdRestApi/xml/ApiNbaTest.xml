@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <nbaTeams>
     <team id="1">
-        <name>Atlanta Hawks</name>        
+        <name>Atlanta Hawks</name>
         <nickname>Hawks</nickname>
         <code>ATL</code>
         <city>Atlanta</city>

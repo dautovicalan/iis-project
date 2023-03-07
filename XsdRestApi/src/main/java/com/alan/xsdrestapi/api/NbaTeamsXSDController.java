@@ -1,10 +1,17 @@
 package com.alan.xsdrestapi.api;
 
+import com.alan.xsdrestapi.model.NbaTeams;
+import com.alan.xsdrestapi.model.Team;
 import com.alan.xsdrestapi.service.NbaTeamsXSDService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.awt.*;
+import java.util.List;
 
 @RestController
 @RequestMapping("api/v1/nbateams/xsd")
@@ -17,7 +24,7 @@ public class NbaTeamsXSDController {
     }
 
     @PostMapping
-    public String validateXSD(){
-        return nbaTeamsXSDService.validateXSD();
+    public String validateXSD(@RequestBody NbaTeams nbaTeams){
+        return nbaTeamsXSDService.validateXSD(nbaTeams);
     }
 }
