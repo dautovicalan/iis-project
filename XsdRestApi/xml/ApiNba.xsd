@@ -3,7 +3,7 @@
     <xs:element name="nbaTeams">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="team">
+                <xs:element name="team" maxOccurs="unbounded">
                     <xs:complexType>
                         <xs:sequence>
                             <xs:element name="name" type="xs:string" />
@@ -11,7 +11,7 @@
                             <xs:element name="code" type="xs:string" />
                             <xs:element name="city" type="xs:string" />
                             <xs:element name="logo" type="xs:string" />
-                            <xs:element name="nbaFranchise" type="xs:boolean" />
+                            <xs:element name="nbaFranchise" type="xs:string" />
                         </xs:sequence>
                         <xs:attribute name="id" type="xs:integer" use="required" />
                     </xs:complexType>

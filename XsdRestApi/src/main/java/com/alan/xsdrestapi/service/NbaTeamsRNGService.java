@@ -1,6 +1,10 @@
 package com.alan.xsdrestapi.service;
 
+import com.alan.xsdrestapi.XsdRestApiApplication;
+import com.alan.xsdrestapi.model.NbaTeams;
+import com.alan.xsdrestapi.utils.JAXBUtils;
 import org.springframework.stereotype.Service;
+import org.xml.sax.InputSource;
 
 import javax.xml.XMLConstants;
 import javax.xml.transform.stream.StreamSource;
@@ -13,15 +17,22 @@ import java.nio.file.Paths;
 
 @Service
 public class NbaTeamsRNGService {
-    public String validateRng() {
+
+    // Solution : https://stackoverflow.com/questions/1541253/how-to-validate-an-xml-document-using-a-relax-ng-schema-and-jaxp
+    private static final String RNG_SCHEMA_PATH = "xml/ApiNba.rng";
+    public String validateRng(NbaTeams teams) {
         try {
+
+            JAXBUtils.save(teams, XsdRestApiApplication.XML_FILE_NAME);
+
             SchemaFactory factory =
                     SchemaFactory.newInstance(XMLConstants.RELAXNG_NS_URI);
-            Schema xmlSchema = factory.newSchema(new File("xml/ApiNba.rng"));
+            Schema xmlSchema = factory.newSchema(new File(RNG_SCHEMA_PATH));
             Validator validator = xmlSchema.newValidator();
-            validator.validate(new StreamSource(new File("xml/ApiNba.xml")));
+            File xml = new File(XsdRestApiApplication.XML_FILE_NAME);
+            validator.validate(new StreamSource(xml));
 
-            return Files.readString(Paths.get("xml/ApiNba.xml"));
+            return Files.readString(Paths.get(XsdRestApiApplication.XML_FILE_NAME));
 
         } catch (Exception e) {
             return e.getMessage();

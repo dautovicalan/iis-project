@@ -8,4 +8,12 @@
         <logo>https://upload.wikimedia.org/wikipedia/fr/e/ee/Hawks_2016.png</logo>
         <nbaFranchise>true</nbaFranchise>
     </team>
+    <team id="2">
+        <name>Milwauke Bucks</name>
+        <nickname>Test</nickname>
+        <code>MBC</code>
+        <city>Milwauke</city>
+        <logo>https://upload.wikimedia.org/wikipedia/fr/e/ee/Hawks_2016.png</logo>
+        <nbaFranchise>true</nbaFranchise>
+    </team>
 </nbaTeams>

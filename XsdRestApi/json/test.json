@@ -1,0 +1,22 @@
+{
+  "team": [
+    {
+      "id": 1,
+      "name": "Atlanta Hawks",
+      "nickname": "Hawks",
+      "code": "ATL",
+      "city": "Atlanta",
+      "logo": "https://upload.wikimedia.org/wikipedia/fr/e/ee/Hawks_2016.png",
+      "nbaFranchise": true
+    },
+    {
+      "id": 2,
+      "name": "Milwauke Bucks",
+      "nickname": "Bucks",
+      "code": "MBC",
+      "city": "Milwauke Bucks",
+      "logo": "https://upload.wikimedia.org/wikipedia/fr/e/ee/Hawks_2016.png",
+      "nbaFranchise": true
+    }
+  ]
+}

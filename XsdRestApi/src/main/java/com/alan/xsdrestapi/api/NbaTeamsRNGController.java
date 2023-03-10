@@ -1,8 +1,10 @@
 package com.alan.xsdrestapi.api;
 
+import com.alan.xsdrestapi.model.NbaTeams;
 import com.alan.xsdrestapi.service.NbaTeamsRNGService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,7 +19,7 @@ public class NbaTeamsRNGController {
     }
 
     @PostMapping
-    public String validateRng(){
-        return nbaTeamsRNGService.validateRng();
+    public String validateRng(@RequestBody NbaTeams nbaTeams){
+        return nbaTeamsRNGService.validateRng(nbaTeams);
     }
 }
