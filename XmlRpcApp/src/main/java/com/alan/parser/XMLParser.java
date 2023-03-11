@@ -57,17 +57,17 @@ public class XMLParser {
                                 }
                                 case TEMPERATURE -> {
                                     if (city != null && !data.isEmpty()) {
-                                        city.setTemp(Double.parseDouble(data));
+                                        city.setTemp(data);
                                     }
                                 }
                                 case MOISTURE -> {
                                     if (city != null && !data.isEmpty()) {
-                                        city.setMoisture(Double.parseDouble(data));
+                                        city.setMoisture(data);
                                     }
                                 }
                                 case PRESSURE -> {
                                     if (city != null && !data.isEmpty()) {
-                                        city.setPressure(Double.parseDouble(data));
+                                        city.setPressure(data);
                                     }
                                 }
                                 case WIND_DIRECTION -> {
@@ -77,7 +77,7 @@ public class XMLParser {
                                 }
                                 case WIND_SPEED -> {
                                     if (city != null && !data.isEmpty()) {
-                                        city.setWindSpeed(Double.parseDouble(data));
+                                        city.setWindSpeed(data);
                                     }
                                 }
                                 case WEATHER -> {

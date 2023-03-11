@@ -12,19 +12,19 @@ public class City {
     @XmlElement(name = "GradIme")
     private String cityName;
     @XmlElement(name = "Temp")
-    private Double temp;
+    private String temp;
     @XmlElement(name = "Vlaga")
-    private Double moisture;
+    private String moisture;
     @XmlElement(name = "Tlak")
-    private Double pressure;
+    private String pressure;
     @XmlElement(name = "VjetarSmjer")
     private String windDirection;
     @XmlElement(name = "VjetarBrzina")
-    private Double windSpeed;
+    private String windSpeed;
     @XmlElement(name = "Vrijeme")
     private String weather;
 
-    public City(String cityName, Double temp, Double moisture, Double pressure, String windDirection, Double windSpeed, String weather) {
+    public City(String cityName, String temp, String moisture, String pressure, String windDirection, String windSpeed, String weather) {
         this.cityName = cityName;
         this.temp = temp;
         this.moisture = moisture;

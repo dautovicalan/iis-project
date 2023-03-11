@@ -34,6 +34,6 @@ public class Client {
 
             System.out.println("Zelite li nastaviti \nD : N");
             finished = reader.readLine();
-        } while ("Y".equals(finished));
+        } while ("D".equals(finished));
     }
 }
