@@ -1,0 +1,54 @@
+<grammar xmlns="http://relaxng.org/ns/structure/1.0"
+    datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+    <start>
+        <ref name="nbateamsContent" />
+    </start>
+    <define name="nbateamsContent">
+        <element name="nbateams">
+            <ref name="teamContent" />
+        </element>
+    </define>
+    <define name="teamContent">
+        <element name="team">
+            <ref name="nameContent" />
+            <ref name="nicknameContent" />
+            <ref name="codeContent" />
+            <ref name="cityContent" />
+            <ref name="logoContent" />
+            <ref name="nbaFranchiseContent" />
+            <attribute name="id">
+                <data type="integer" />
+            </attribute>
+        </element>
+    </define>
+    <define name="nameContent">
+        <element name="name">
+            <text />
+        </element>
+    </define>
+    <define name="nicknameContent">
+        <element name="nickname">
+            <text />
+        </element>
+    </define>
+    <define name="codeContent">
+        <element name="code">
+            <text />
+        </element>
+    </define>
+    <define name="cityContent">
+        <element name="city">
+            <text />
+        </element>
+    </define>
+    <define name="logoContent">
+        <element name="logo">
+            <text />
+        </element>
+    </define>
+    <define name="nbaFranchiseContent">
+        <element name="nbaFranchise">
+            <text />
+        </element>
+    </define>
+</grammar>

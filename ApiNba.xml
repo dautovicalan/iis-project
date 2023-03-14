@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<?xml-model href="ApiNba1.xsd"?>
 <nbaTeams>
     <team id="1">
         <name>Atlanta Hawks</name>
