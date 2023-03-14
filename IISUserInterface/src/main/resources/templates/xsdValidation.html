@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>XSD Validation</title>
+</head>
+<body>
+  <h1>Welcome to XSD validation page</h1>
+  <form action="#" th:action="@{xsd/testXsd.html}" th:object="${team}" method="POST">
+      <input type="text" th:field="*{id}">
+      <input type="text" th:field="*{name}">
+      <input type="text" th:field="*{nickname}">
+      <input type="text" th:field="*{code}">
+      <input type="text" th:field="*{city}">
+      <input type="text" th:field="*{nbaFranchise}">
+      <input type="submit" value="Test XSD">
+  </form>
+</body>
+</html>

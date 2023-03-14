@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.alan</groupId>
-    <artifactId>XsdRestApi</artifactId>
+    <artifactId>XSDRestAPI</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>XsdRestApi</name>
     <description>XsdRestApi</description>
