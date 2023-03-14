@@ -1,16 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Home</title>
-</head>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{_layout.html}">
 <body>
-    <h1>Welcome to the application</h1>
-    <div>
-        <a href="/xsd">Test XSD</a>
-        <a href="/rng">Test RNG</a>
-        <a href="">Test SOAP</a>
-        <a href="">NBA Teams API</a>
-    </div>
+<div layout:fragment="content" style="text-align: center">
+    <h1>Welcome to IIS Project</h1>
+    <h3>Please Use Navigation Bar To Navigate Around Application</h3>
+</div>
 </body>
 </html>

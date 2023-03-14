@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("nbaTeams")
 public class NbaTeamsController {
 
-    @GetMapping()
+    @GetMapping
     public String getNbaTeams(Model model){
 
         return "nbaTeams";
