@@ -41,7 +41,7 @@ public class XSDValidationController {
         return "xsdValidation";
     }
 
-    @PostMapping("testXsd")
+    @PostMapping
     public String testXsdValidation(@ModelAttribute Team team, Model model){
         NbaTeams nbaTeams = new NbaTeams(List.of(team));
         HttpEntity<NbaTeams> request = new HttpEntity<>(nbaTeams, httpHeaders);

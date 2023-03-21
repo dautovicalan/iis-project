@@ -3,7 +3,16 @@
       layout:decorate="~{_layout.html}">
 <body>
 <div layout:fragment="content">
-    <h1>Hello from Nba teams</h1>
+    <h1 style="text-align: center">NBA Teams</h1>
+    <div style="width: 70%; margin: auto">
+        <form action="#" th:action="@{nbaTeams/getData}" method="POST">
+            <input type="submit" class="btn btn-primary" value="Get JSON">
+        </form>
+        <div>
+            <h3>Result: </h3>
+            <code th:text="${data}"/>
+        </div>
+    </div>
 </div>
 </body>
 </html>

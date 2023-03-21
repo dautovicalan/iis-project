@@ -38,7 +38,7 @@ public class RNGValidationController {
         return "rngValidation";
     }
 
-    @PostMapping("testRng")
+    @PostMapping
     public String testRngValidation(@ModelAttribute Team team, Model model){
         NbaTeams nbaTeams = new NbaTeams(List.of(team));
         HttpEntity<NbaTeams> request = new HttpEntity<>(nbaTeams, httpHeaders);

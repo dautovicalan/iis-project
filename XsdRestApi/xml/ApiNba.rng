@@ -9,19 +9,29 @@
                 </data>
             </attribute>
             <element name="name">
-                <text />
+                <data type="string">
+                    <param name="pattern">.+</param>
+                </data>
             </element>
             <element name="nickname">
-                <text />
+                <data type="string">
+                    <param name="pattern">.+</param>
+                </data>
             </element>
             <element name="code">
-                <text />
+                <data type="string">
+                    <param name="pattern">.+</param>
+                </data>
             </element>
             <element name="city">
-                <text />
+                <data type="string">
+                    <param name="pattern">.+</param>
+                </data>
             </element>
             <element name="logo">
-                <text />
+                <data type="string">
+                    <param name="pattern">.+</param>
+                </data>
             </element>
             <element name="nbaFranchise">
                 <data type="boolean" />

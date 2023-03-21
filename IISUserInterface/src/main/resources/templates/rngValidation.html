@@ -5,7 +5,11 @@
 <div layout:fragment="content">
   <h1 style="text-align: center">RNG validation</h1>
   <div style="width: 70%; margin: auto">
-      <form action="#" th:action="@{rngValidation/testRng}" th:object="${team}" method="POST">
+      <form action="#" th:action="@{/rngValidation}" th:object="${team}" method="POST">
+          <div class="form-group">
+              <label for="id">Id</label>
+              <input type="text" th:field="*{id}" name="name" id="id" class="form-control" placeholder="Enter id...">
+          </div>
           <div class="form-group">
               <label for="name">Name</label>
               <input type="text" th:field="*{name}" name="name" id="name" class="form-control" placeholder="Enter name...">
@@ -21,6 +25,10 @@
           <div class="form-group">
               <label for="city">City</label>
               <input type="text" th:field="*{city}" name="city" id="city" class="form-control" placeholder="Enter city...">
+          </div>
+          <div class="form-group">
+              <label for="logo">Logo</label>
+              <input type="text" th:field="*{logo}" name="city" id="logo" class="form-control" placeholder="Enter logo URL...">
           </div>
           <div class="form-group">
               <label for="nba-franchise">Nba franchise</label>
