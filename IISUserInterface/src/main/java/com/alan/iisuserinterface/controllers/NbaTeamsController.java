@@ -22,17 +22,11 @@ import java.net.http.HttpResponse;
 public class NbaTeamsController {
 
     private static final String API_URL = "https://api-nba-v1.p.rapidapi.com/teams";
-    private final RestTemplate restTemplate;
-    private HttpHeaders httpHeaders;
-
-    public NbaTeamsController(RestTemplate restTemplate) {
-        this.restTemplate = restTemplate;
-
-        httpHeaders = new HttpHeaders();
-        httpHeaders.setContentType(MediaType.APPLICATION_JSON);
-        httpHeaders.add("X-RapidAPI-Key", "388c8cc2dbmsh1df53eecce6aa75p169774jsn8123550febb4");
-        httpHeaders.add("X-RapidAPI-Host", "api-nba-v1.p.rapidapi.com");
-    }
+    public static final String X_RAPID_API_KEY = "X-RapidAPI-Key";
+    public static final String API_KEY = "388c8cc2dbmsh1df53eecce6aa75p169774jsn8123550febb4";
+    public static final String X_RAPID_API_HOST = "X-RapidAPI-Host";
+    public static final String HOST = "api-nba-v1.p.rapidapi.com";
+    public static final String GET = "GET";
 
     @GetMapping
     public String getNbaTeams(Model model){
@@ -41,24 +35,23 @@ public class NbaTeamsController {
 
     @PostMapping("getData")
     public String getData(String data, Model model){
-
-        HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create("https://api-nba-v1.p.rapidapi.com/teams"))
-                .header("X-RapidAPI-Key", "388c8cc2dbmsh1df53eecce6aa75p169774jsn8123550febb4")
-                .header("X-RapidAPI-Host", "api-nba-v1.p.rapidapi.com")
-                .method("GET", HttpRequest.BodyPublishers.noBody())
-                .build();
-        HttpResponse<String> response = null;
         try {
+            HttpRequest request = HttpRequest.newBuilder()
+                    .uri(URI.create(API_URL))
+                    .header(X_RAPID_API_KEY, API_KEY)
+                    .header(X_RAPID_API_HOST, HOST)
+                    .method(GET, HttpRequest.BodyPublishers.noBody())
+                    .build();
+            HttpResponse<String> response = null;
+
             response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
+            String resultBody = response.body();
+
+            assert resultBody != null;
+            model.addAttribute("data", resultBody);
+            return "nbaTeams";
         } catch (IOException | InterruptedException e) {
             throw new RuntimeException(e);
         }
-
-        String resultBody = response.body();
-
-        assert resultBody != null;
-        model.addAttribute("data", resultBody);
-        return "nbaTeams";
     }
 }

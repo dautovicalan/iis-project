@@ -1,6 +1,5 @@
 package com.alan.iisuserinterface.controllers;
 
-import com.alan.iisuserinterface.models.NbaTeams;
 import com.alan.iisuserinterface.models.Team;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -23,7 +22,7 @@ public class RNGValidationController {
     private static final String API_URL = "http://localhost:5001/api/v1/nbateams/rng";
 
     private final RestTemplate restTemplate;
-    private HttpHeaders httpHeaders;
+    private final HttpHeaders httpHeaders;
 
     public RNGValidationController(RestTemplate restTemplate) {
         this.restTemplate = restTemplate;
@@ -40,8 +39,7 @@ public class RNGValidationController {
 
     @PostMapping
     public String testRngValidation(@ModelAttribute Team team, Model model){
-        NbaTeams nbaTeams = new NbaTeams(List.of(team));
-        HttpEntity<NbaTeams> request = new HttpEntity<>(nbaTeams, httpHeaders);
+        HttpEntity<Team> request = new HttpEntity<>(team, httpHeaders);
 
         ResponseEntity<String> result = restTemplate.postForEntity(API_URL, request, String.class);
         String resultBody = result.getBody();

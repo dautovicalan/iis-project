@@ -1,7 +1,7 @@
 package com.alan.xsdrestapi.service;
 
 import com.alan.xsdrestapi.XsdRestApiApplication;
-import com.alan.xsdrestapi.model.NbaTeams;
+import com.alan.xsdrestapi.model.Team;
 import com.alan.xsdrestapi.utils.JAXBUtils;
 import org.springframework.stereotype.Service;
 
@@ -18,10 +18,10 @@ import java.nio.file.Paths;
 public class NbaTeamsXSDService {
 
     private static final String XSD_SCHEMA_PATH = "xml/ApiNba.xsd";
-    public String validateXSD(NbaTeams teams) {
+    public String validateXSD(Team team) {
         try {
-            System.out.println(teams);
-            JAXBUtils.save(teams, XsdRestApiApplication.XML_FILE_NAME);
+            System.out.println(team);
+            JAXBUtils.save(team, XsdRestApiApplication.XML_FILE_NAME);
 
             SchemaFactory factory =
                     SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);

@@ -1,41 +1,37 @@
 <?xml version="1.0"?>
-<element name="nbaTeams" xmlns="http://relaxng.org/ns/structure/1.0"
+<element name="team" xmlns="http://relaxng.org/ns/structure/1.0"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
-    <zeroOrMore>
-        <element name="team">
-            <attribute name="id">
-                <data type="integer">
-                    <param name="minInclusive">1</param>
-                </data>
-            </attribute>
-            <element name="name">
-                <data type="string">
-                    <param name="pattern">.+</param>
-                </data>
-            </element>
-            <element name="nickname">
-                <data type="string">
-                    <param name="pattern">.+</param>
-                </data>
-            </element>
-            <element name="code">
-                <data type="string">
-                    <param name="pattern">.+</param>
-                </data>
-            </element>
-            <element name="city">
-                <data type="string">
-                    <param name="pattern">.+</param>
-                </data>
-            </element>
-            <element name="logo">
-                <data type="string">
-                    <param name="pattern">.+</param>
-                </data>
-            </element>
-            <element name="nbaFranchise">
-                <data type="boolean" />
-            </element>
+        <attribute name="id">
+            <data type="integer">
+                <param name="minInclusive">1</param>
+            </data>
+        </attribute>
+        <element name="name">
+            <data type="string">
+                <param name="pattern">.+</param>
+            </data>
         </element>
-    </zeroOrMore>
+        <element name="nickname">
+            <data type="string">
+                <param name="pattern">.+</param>
+            </data>
+        </element>
+        <element name="code">
+            <data type="string">
+                <param name="pattern">.+</param>
+            </data>
+        </element>
+        <element name="city">
+            <data type="string">
+                <param name="pattern">.+</param>
+            </data>
+        </element>
+        <element name="logo">
+            <data type="string">
+                <param name="pattern">.+</param>
+            </data>
+        </element>
+        <element name="nbaFranchise">
+            <data type="boolean" />
+        </element>
 </element>

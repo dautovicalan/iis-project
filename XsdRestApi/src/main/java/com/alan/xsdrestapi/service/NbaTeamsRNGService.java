@@ -1,10 +1,9 @@
 package com.alan.xsdrestapi.service;
 
 import com.alan.xsdrestapi.XsdRestApiApplication;
-import com.alan.xsdrestapi.model.NbaTeams;
+import com.alan.xsdrestapi.model.Team;
 import com.alan.xsdrestapi.utils.JAXBUtils;
 import org.springframework.stereotype.Service;
-import org.xml.sax.InputSource;
 
 import javax.xml.XMLConstants;
 import javax.xml.transform.stream.StreamSource;
@@ -20,10 +19,10 @@ public class NbaTeamsRNGService {
 
     // Solution : https://stackoverflow.com/questions/1541253/how-to-validate-an-xml-document-using-a-relax-ng-schema-and-jaxp
     private static final String RNG_SCHEMA_PATH = "xml/ApiNba.rng";
-    public String validateRng(NbaTeams teams) {
+    public String validateRng(Team team) {
         try {
 
-            JAXBUtils.save(teams, XsdRestApiApplication.XML_FILE_NAME);
+            JAXBUtils.save(team, XsdRestApiApplication.XML_FILE_NAME);
 
             SchemaFactory factory =
                     SchemaFactory.newInstance(XMLConstants.RELAXNG_NS_URI);

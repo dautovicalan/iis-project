@@ -1,6 +1,5 @@
 package com.alan.iisuserinterface.controllers;
 
-import com.alan.iisuserinterface.models.NbaTeams;
 import com.alan.iisuserinterface.models.Team;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
@@ -25,7 +24,7 @@ public class XSDValidationController {
 
     private static final String API_URL = "http://localhost:5001/api/v1/nbateams/xsd";
     private final RestTemplate restTemplate;
-    private HttpHeaders httpHeaders;
+    private final HttpHeaders httpHeaders;
 
     @Autowired
     public XSDValidationController(RestTemplate restTemplate) {
@@ -43,12 +42,9 @@ public class XSDValidationController {
 
     @PostMapping
     public String testXsdValidation(@ModelAttribute Team team, Model model){
-        NbaTeams nbaTeams = new NbaTeams(List.of(team));
-        HttpEntity<NbaTeams> request = new HttpEntity<>(nbaTeams, httpHeaders);
-
+        HttpEntity<Team> request = new HttpEntity<>(team, httpHeaders);
         ResponseEntity<String> result = restTemplate.postForEntity(API_URL, request, String.class);
         String resultBody = result.getBody();
-        System.out.println(resultBody);
 
         assert resultBody != null;
         model.addAttribute("result", resultBody);

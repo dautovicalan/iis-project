@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<nbaTeams>
-    <team id="1">
-        <name>1´</name>
-        <nickname>1</nickname>
-        <code>1</code>
-        <city>1</city>
-        <logo>1</logo>
-        <nbaFranchise>false</nbaFranchise>
-    </team>
-</nbaTeams>
+<team id="1">
+    <name>1</name>
+    <nickname>1</nickname>
+    <code>1</code>
+    <city>1</city>
+    <logo>1</logo>
+    <nbaFranchise>false</nbaFranchise>
+</team>
