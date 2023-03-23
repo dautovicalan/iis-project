@@ -3,7 +3,7 @@
     <xs:element name="nbateams">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="team">
+                <xs:element name="team" maxOccurs="unbounded">
                     <xs:complexType>
                         <xs:sequence>
                             <xs:element name="name" type="xs:string" />
