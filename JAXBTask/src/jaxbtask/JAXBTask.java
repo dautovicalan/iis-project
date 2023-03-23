@@ -19,6 +19,8 @@ import javax.xml.bind.Unmarshaller;
  */
 public class JAXBTask {
 
+    private static final String DIR = "xml";
+    private static final String FILE = "SOAP_Generated_XML.xml";
     /**
      * @param args the command line arguments
      */
@@ -27,15 +29,14 @@ public class JAXBTask {
             JAXBContext jc = JAXBContext.newInstance(NbaTeams.class);
             Marshaller marshaller = jc.createMarshaller();
             
-            Unmarshaller unmarshaller = jc.createUnmarshaller();
-            File file = new File("xml/ApiNba.xml");
+            Unmarshaller unmarshaller = jc.createUnmarshaller();           
+            File file = new File(DIR + File.separator + FILE);
             
             if (file.exists() && !file.isDirectory()) {
                 NbaTeams nbaTeams = (NbaTeams) unmarshaller.unmarshal(file);
                 marshaller.marshal(nbaTeams, System.out);
-            }
-                    
-                    
+                System.out.println("\nSucessfully unmarshalled");
+            }                                        
         } catch (JAXBException ex) {
             Logger.getLogger(JAXBTask.class.getName()).log(Level.SEVERE, null, ex);
         }
