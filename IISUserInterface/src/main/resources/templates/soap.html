@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{_layout.html}">
+<body>
+<div layout:fragment="content">
+    <h1 style="text-align: center">SOAP</h1>
+    <div style="width: 70%; margin: auto">
+        <form action="#" th:action="@{/soap}" method="POST">
+            <div class="form-group">
+                <label for="teamCode">Code</label>
+                <input type="text" name="teamCode" id="teamCode" class="form-control" placeholder="Enter team code...">
+            </div>
+            <input type="submit" class="btn btn-primary" value="Get Team By Code">
+        </form>
+        <div>
+            <h3>Result: </h3>
+            <code th:text="${data}"/>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -16,7 +16,6 @@ import java.util.List;
 
 @Controller
 public class ErrorController extends AbstractErrorController {
-    private static final String ERROR_PATH=  "/error";
 
     @Autowired
     public ErrorController(ErrorAttributes errorAttributes) {

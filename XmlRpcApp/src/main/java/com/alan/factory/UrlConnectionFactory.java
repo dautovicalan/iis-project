@@ -15,7 +15,7 @@ public class UrlConnectionFactory {
     private UrlConnectionFactory() {
     }
 
-    public static HttpURLConnection getHttpUrlConnection(String path) throws MalformedURLException, IOException {
+    public static HttpURLConnection getHttpUrlConnection(String path) throws IOException {
         URL url = new URL(path);
         HttpURLConnection con = (HttpURLConnection) url.openConnection();
         con.setConnectTimeout(TIMEOUT);

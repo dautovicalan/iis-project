@@ -1,37 +1,24 @@
 package com.alan.iisuserinterface.controllers;
 
 import com.alan.iisuserinterface.models.Team;
+import com.alan.iisuserinterface.services.XSDValidationService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.client.RestTemplate;
-import org.springframework.http.HttpHeaders;
-
-import java.util.ArrayList;
-import java.util.List;
 
 
 @Controller
 @RequestMapping("xsdValidation")
 public class XSDValidationController {
-
-    private static final String API_URL = "http://localhost:5001/api/v1/nbateams/xsd";
-    private final RestTemplate restTemplate;
-    private final HttpHeaders httpHeaders;
+    private final XSDValidationService xsdValidationService;
 
     @Autowired
-    public XSDValidationController(RestTemplate restTemplate) {
-        this.restTemplate = restTemplate;
-
-        httpHeaders = new HttpHeaders();
-        httpHeaders.setContentType(MediaType.APPLICATION_JSON);
+    public XSDValidationController(XSDValidationService xsdValidationService) {
+        this.xsdValidationService = xsdValidationService;
     }
 
     @GetMapping
@@ -42,12 +29,8 @@ public class XSDValidationController {
 
     @PostMapping
     public String testXsdValidation(@ModelAttribute Team team, Model model){
-        HttpEntity<Team> request = new HttpEntity<>(team, httpHeaders);
-        ResponseEntity<String> result = restTemplate.postForEntity(API_URL, request, String.class);
-        String resultBody = result.getBody();
-
-        assert resultBody != null;
-        model.addAttribute("result", resultBody);
+        String output = xsdValidationService.testXsdValidation(team);
+        model.addAttribute("result", output);
         return "xsdValidation";
     }
 }

@@ -13,7 +13,7 @@ public enum TagType {
 
     private final String name;
 
-    private TagType(String name) {
+    TagType(String name) {
         this.name = name;
     }
 

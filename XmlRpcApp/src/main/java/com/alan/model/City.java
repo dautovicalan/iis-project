@@ -1,6 +1,7 @@
 package com.alan.model;
 
 import jakarta.xml.bind.annotation.XmlElement;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -8,6 +9,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
+@AllArgsConstructor
 public class City {
     @XmlElement(name = "GradIme")
     private String cityName;
@@ -23,16 +25,6 @@ public class City {
     private String windSpeed;
     @XmlElement(name = "Vrijeme")
     private String weather;
-
-    public City(String cityName, String temp, String moisture, String pressure, String windDirection, String windSpeed, String weather) {
-        this.cityName = cityName;
-        this.temp = temp;
-        this.moisture = moisture;
-        this.pressure = pressure;
-        this.windDirection = windDirection;
-        this.windSpeed = windSpeed;
-        this.weather = weather;
-    }
 
     @Override
     public String toString() {
