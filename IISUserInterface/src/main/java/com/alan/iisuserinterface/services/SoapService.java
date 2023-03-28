@@ -18,7 +18,7 @@ public class SoapService {
 
     public Optional<Team> findTeamByCode(String teamCode){
         GetTeamResponse teamByCode = teamsClient.getTeamByCode(teamCode);
-        if (teamByCode.getTeam().getName() == null){
+        if (teamByCode.getTeam() == null){
             return Optional.empty();
         }
         return Optional.ofNullable(teamByCode.getTeam());

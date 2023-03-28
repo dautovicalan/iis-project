@@ -88,12 +88,12 @@ public final class XMLUtils {
 
         transformer.transform(domSource, streamResult);
 
-
-        Team team = new Team();
+        Team team = null;
         for (int i = 0; i < nodeList.getLength(); i++){
             if (nodeList.item(i).getNodeType() == Node.ELEMENT_NODE){
                 Element element = (Element) nodeList.item(i);
                 if (element.getNodeName().contains("team")){
+                    team = new Team();
                     team.setId(new BigInteger(element.getAttribute("id")));
                     team.setName(element.getElementsByTagName("name").item(0).getTextContent());
                     team.setNickname(element.getElementsByTagName("nickname").item(0).getTextContent());

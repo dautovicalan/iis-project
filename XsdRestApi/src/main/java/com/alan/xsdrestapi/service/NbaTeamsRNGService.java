@@ -17,7 +17,6 @@ import java.nio.file.Paths;
 @Service
 public class NbaTeamsRNGService {
 
-    // Solution : https://stackoverflow.com/questions/1541253/how-to-validate-an-xml-document-using-a-relax-ng-schema-and-jaxp
     private static final String RNG_SCHEMA_PATH = "xml/ApiNba.rng";
     public String validateRng(Team team) {
         try {
