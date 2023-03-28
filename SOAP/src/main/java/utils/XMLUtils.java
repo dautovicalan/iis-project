@@ -26,12 +26,11 @@ import java.util.Map;
 public final class XMLUtils {
     
     public static final String DIR = "/Users/alandautovic/development/uni_projects/iis-project/JAXBTask/xml";
-
+    public static final String FILE_NAME = "SOAP_Generated_XML.xml";
     private static final DocumentBuilderFactory documentBuilderFactory
             = DocumentBuilderFactory.newInstance();
 
     private static final DocumentBuilder documentBuilder;
-    public static final String FILE_NAME = "SOAP_Generated_XML.xml";
 
     static {
         try {
