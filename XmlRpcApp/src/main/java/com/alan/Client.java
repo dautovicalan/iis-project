@@ -11,9 +11,12 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class Client {
+
+    private static final String RPC_SERVER_URL = "http://localhost:8084";
+
     public static void main(String[] args) throws IOException, XmlRpcException {
         XmlRpcClientConfigImpl config = new XmlRpcClientConfigImpl();
-        config.setServerURL(new URL("http://localhost:8080"));
+        config.setServerURL(new URL(RPC_SERVER_URL));
         config.setEnabledForExceptions(true);
         config.setContentLengthOptional(false);
         config.setEnabledForExtensions(true);
@@ -34,6 +37,6 @@ public class Client {
 
             System.out.println("Do you wanna continue ? \nY : N");
             finished = reader.readLine();
-        } while ("D".equalsIgnoreCase(finished));
+        } while ("Y".equalsIgnoreCase(finished));
     }
 }

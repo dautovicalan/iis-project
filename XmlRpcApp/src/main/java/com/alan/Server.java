@@ -11,7 +11,7 @@ import java.io.IOException;
 
 public class Server {
     public static void main(String[] args) throws XmlRpcException, IOException {
-        WebServer server = new WebServer(8080);
+        WebServer server = new WebServer(8084);
 
         XmlRpcServer xmlServer = server.getXmlRpcServer();
         PropertyHandlerMapping propertyHandlerMapping = new PropertyHandlerMapping();
