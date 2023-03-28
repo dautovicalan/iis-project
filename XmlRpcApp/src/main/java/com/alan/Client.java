@@ -26,14 +26,14 @@ public class Client {
         );
         String finished;
         do {
-            System.out.println("Unesi ime grada:");
+            System.out.println("Enter city name:");
             String city = reader.readLine();
             Object[] parameters = new Object[]{city};
 
             System.out.println(client.execute("XMLParser.parse", parameters));
 
-            System.out.println("Zelite li nastaviti \nD : N");
+            System.out.println("Do you wanna continue ? \nY : N");
             finished = reader.readLine();
-        } while ("D".equals(finished));
+        } while ("D".equalsIgnoreCase(finished));
     }
 }
