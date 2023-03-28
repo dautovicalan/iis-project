@@ -26,11 +26,13 @@ import java.util.Map;
 public final class XMLUtils {
     
     public static final String DIR = "/Users/alandautovic/development/uni_projects/iis-project/JAXBTask/xml";
-    
+
     private static final DocumentBuilderFactory documentBuilderFactory
             = DocumentBuilderFactory.newInstance();
 
     private static final DocumentBuilder documentBuilder;
+    public static final String FILE_NAME = "SOAP_Generated_XML.xml";
+
     static {
         try {
             documentBuilder = documentBuilderFactory.newDocumentBuilder();
@@ -82,7 +84,7 @@ public final class XMLUtils {
         TransformerFactory transformerFactory = TransformerFactory.newInstance();
         Transformer transformer = transformerFactory.newTransformer();
         DOMSource domSource = new DOMSource(document);
-        StreamResult streamResult = new StreamResult(new File(DIR + File.separator + "SOAP_Generated_XML.xml"));
+        StreamResult streamResult = new StreamResult(new File(DIR + File.separator + FILE_NAME));
 
         transformer.transform(domSource, streamResult);
 

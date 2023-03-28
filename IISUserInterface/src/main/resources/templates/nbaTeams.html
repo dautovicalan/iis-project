@@ -5,7 +5,11 @@
 <div layout:fragment="content">
     <h1 style="text-align: center">NBA Teams</h1>
     <div style="width: 70%; margin: auto">
-        <form action="#" th:action="@{nbaTeams/getData}" method="POST">
+        <form action="#" th:action="@{/nbaTeams}" method="POST">
+            <div class="form-group">
+                <label for="teamCode">Search by Code</label>
+                <input type="text" name="teamCode" id="teamCode" class="form-control" placeholder="Enter team code or leave blank for all teams...">
+            </div>
             <input type="submit" class="btn btn-primary" value="Get JSON">
         </form>
         <div>

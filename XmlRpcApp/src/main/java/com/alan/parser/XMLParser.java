@@ -31,7 +31,7 @@ public class XMLParser {
 
             Optional<TagType> tagType = Optional.empty();
             City city = null;
-            StartElement startElement = null;
+            StartElement startElement;
             while (reader.hasNext()) {
                 XMLEvent event = reader.nextEvent();
                 switch (event.getEventType()) {
@@ -51,7 +51,7 @@ public class XMLParser {
                             switch (tagType.get()) {
 
                                 case CITY_NAME -> {
-                                    if (city != null && !data.isEmpty()) {
+                                    if (!data.isEmpty()) {
                                         city.setCityName(data);
                                     }
                                 }
@@ -96,6 +96,6 @@ public class XMLParser {
                 return element.toString();
             }
         }
-        return cityName + " ne postoji na nasoj listi";
+        return cityName + " does not exist";
     }
 }

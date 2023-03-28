@@ -5,7 +5,7 @@ import javax.xml.stream.XMLInputFactory;
 import javax.xml.stream.XMLStreamException;
 import java.io.InputStream;
 
-public class StaxParserFactory {
+public final class StaxParserFactory {
     private StaxParserFactory(){
 
     }

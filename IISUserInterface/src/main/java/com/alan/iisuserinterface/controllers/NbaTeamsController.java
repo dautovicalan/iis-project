@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequestMapping("nbaTeams")
@@ -20,13 +21,13 @@ public class NbaTeamsController {
     }
 
     @GetMapping
-    public String getNbaTeams(Model model){
+    public String getNbaTeams(){
         return "nbaTeams";
     }
 
-    @PostMapping("getData")
-    public String getData(String data, Model model){
-        String nbaTeams = nbaTeamsService.getNbaTeams();
+    @PostMapping
+    public String getData(@RequestParam("teamCode") String teamCode, Model model){
+        String nbaTeams = nbaTeamsService.getNbaTeams(teamCode);
         model.addAttribute("data", nbaTeams);
         return "nbaTeams";
 

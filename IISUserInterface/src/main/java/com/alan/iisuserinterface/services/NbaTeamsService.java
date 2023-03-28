@@ -17,17 +17,15 @@ public class NbaTeamsService {
     public static final String HOST = "api-nba-v1.p.rapidapi.com";
     public static final String GET = "GET";
 
-    public String getNbaTeams(){
+    public String getNbaTeams(String teamCode){
         try {
             HttpRequest request = HttpRequest.newBuilder()
-                    .uri(URI.create(API_URL))
+                    .uri(URI.create(API_URL + ("".equals(teamCode) ? "" : "?code=" + teamCode)))
                     .header(X_RAPID_API_KEY, API_KEY)
                     .header(X_RAPID_API_HOST, HOST)
                     .method(GET, HttpRequest.BodyPublishers.noBody())
                     .build();
-            HttpResponse<String> response = null;
-
-            response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
+            HttpResponse<String> response = HttpClient.newHttpClient().send(request, HttpResponse.BodyHandlers.ofString());
             String resultBody = response.body();
 
             assert resultBody != null;
