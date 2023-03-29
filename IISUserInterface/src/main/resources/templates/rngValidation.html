@@ -8,7 +8,7 @@
       <form action="#" th:action="@{/rngValidation}" th:object="${team}" method="POST">
           <div class="form-group">
               <label for="id">Id</label>
-              <input type="text" th:field="*{id}" name="name" id="id" class="form-control" placeholder="Enter id...">
+              <input type="number" th:field="*{id}" name="name" id="id" class="form-control" placeholder="Enter id...">
           </div>
           <div class="form-group">
               <label for="name">Name</label>
@@ -32,7 +32,7 @@
           </div>
           <div class="form-group">
               <label for="nba-franchise">Nba franchise</label>
-              <input type="text" th:field="*{nbaFranchise}" name="nba-franchise" id="nba-franchise" class="form-control" placeholder="Enter nba-franchise...">
+              <input type="checkbox" th:field="*{nbaFranchise}" name="nba-franchise" id="nba-franchise">
           </div>
           <input type="submit" class="btn btn-primary" value="Test XSD">
       </form>

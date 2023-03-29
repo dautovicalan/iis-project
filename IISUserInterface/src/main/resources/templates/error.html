@@ -3,8 +3,8 @@
       layout:decorate="~{_layout.html}">
 <body>
 <div layout:fragment="content">
-  <h1 style="text-align: center">Error</h1>
-  <h2>Not Found</h2>
+  <h1 style="text-align: center">Error Happened</h1>
+  <p style="text-align: center" th:text="${'Error: ' + error}"/>
 </div>
 </body>
 </html>
