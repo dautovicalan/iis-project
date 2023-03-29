@@ -48,7 +48,7 @@ public class WebServiceConfig extends WsConfigurerAdapter {
     }
 
     @Bean
-    public XsdSchema countriesSchema() {
+    public XsdSchema teamsSchema() {
         return new SimpleXsdSchema(new ClassPathResource("ApiNba.xsd"));
     }
 
